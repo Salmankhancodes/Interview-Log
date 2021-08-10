@@ -6,7 +6,8 @@ import toast, { Toaster } from 'react-hot-toast'
 import { Link, useParams } from 'react-router-dom'
 import { REDIRECT_FALSE, REMOVE_MESSAGE } from '../store/types/PostTypes'
 import { fetchPosts } from '../store/asyncMethods/PostMethods'
-import { BsPencil, BsArchive } from 'react-icons/bs'
+
+import { BsPencil, BsArchive, BsImage } from 'react-icons/bs'
 import Loader from './Loader'
 import Sidebar from './Sidebar'
 
@@ -66,6 +67,9 @@ const Dashboard = () => {
                     </div>
 
                     <div className='dashboard__posts__links'>
+                      <Link to={`/updateImage/${post._id}`}>
+                        <BsImage className='icon' />
+                      </Link>
                       <Link to={`/edit/${post._id}`}>
                         <BsPencil className='icon' />
                       </Link>
