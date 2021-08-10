@@ -16,6 +16,8 @@ const initState = {
   message: '',
 
   posts: [],
+  perPage: 0,
+  count: 0,
 }
 
 export const PostReducer = (state = initState, action) => {
@@ -43,7 +45,12 @@ export const PostReducer = (state = initState, action) => {
 export const FetchPosts = (state = initState, action) => {
   const { type, payload } = action
   if (type === SET_POSTS) {
-    return { ...state, posts: payload }
+    return {
+      ...state,
+      posts: payload.response,
+      count: payload.count,
+      perPage: payload.perPage,
+    }
   } else {
     return state
   }
