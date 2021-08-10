@@ -66,7 +66,7 @@ const Dashboard = () => {
                     </div>
 
                     <div className='dashboard__posts__links'>
-                      <Link to='/'>
+                      <Link to={`/edit/${post._id}`}>
                         <BsPencil className='icon' />
                       </Link>
                       <BsArchive className='icon' />

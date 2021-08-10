@@ -8,6 +8,12 @@ import {
   SET_MESSAGE,
   REMOVE_MESSAGE,
   SET_POSTS,
+  SET_POST,
+  POST_REQUEST,
+  POST_RESET,
+  RESET_UPDATE,
+  SET_UPDATE_ERRORS,
+  RESET_UPDATE_ERRORS,
 } from '../types/PostTypes'
 const initState = {
   loading: false,
@@ -18,6 +24,9 @@ const initState = {
   posts: [],
   perPage: 0,
   count: 0,
+  post: {},
+  postStatus: false,
+  editErrors: [],
 }
 
 export const PostReducer = (state = initState, action) => {
@@ -50,6 +59,33 @@ export const FetchPosts = (state = initState, action) => {
       posts: payload.response,
       count: payload.count,
       perPage: payload.perPage,
+    }
+  } else {
+    return state
+  }
+}
+
+export const FetchPost = (state = initState, action) => {
+  const { type, payload } = action
+  if (type === SET_POST) {
+    return { ...state, post: payload }
+  } else if (type === POST_REQUEST) {
+    return { ...state, postStatus: true }
+  } else if (type === POST_RESET) {
+    return { ...state, postStatus: false }
+  } else {
+    return state
+  }
+}
+
+export const UpdatePost = (state = initState, action) => {
+  const { type, payload } = action
+  if (type === SET_UPDATE_ERRORS) {
+    return { ...state, editErrors: payload }
+  } else if (type === RESET_UPDATE_ERRORS) {
+    return {
+      ...state,
+      editErrors: [],
     }
   } else {
     return state
