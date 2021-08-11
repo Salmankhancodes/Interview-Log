@@ -9,7 +9,7 @@ const Sidebar = () => {
         <Link>Change Password</Link>
       </div>
       <div className='sidebar__element'>
-        <Link to='/updateName'>Change Name</Link>
+        <Link>Change Name</Link>
       </div>
     </div>
   )

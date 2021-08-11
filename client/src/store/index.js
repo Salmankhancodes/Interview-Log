@@ -9,14 +9,13 @@ import {
   UpdatePost,
   UpdateImage,
 } from './reducers/PostReducer'
-import { updateName } from './reducers/ProfileReducer'
 const rootReducers = combineReducers({
   AuthReducer,
   PostReducer,
   FetchPosts,
   FetchPost,
   UpdatePost,
-  updateName,
+
   UpdateImage,
 })
 const middlewares = [thunkMiddleware]
