@@ -12,88 +12,22 @@ const Home = () => {
   const { posts, count, perPage } = useSelector((state) => state.FetchPosts)
   const dispatch = useDispatch()
   useEffect(() => {
-<<<<<<< HEAD
-    dispatch(homePosts(page))
-  }, [page])
-=======
     dispatch(homePosts())
   }, [])
   console.log('page: ', page)
   console.log('posts: ', posts)
   console.log('count: ', count)
   console.log('perPage: ', perPage)
->>>>>>> parent of b2fd42d... Show posts on home
 
   return (
     <>
       <Helmet>
-        <title>Interview Log</title>
+        <title>Web articles</title>
         <meta
           name='description'
           content='Learn HTML, CSS, JavaScript, React, Vue, Flutter etc'
         />
       </Helmet>
-<<<<<<< HEAD
-      <div className='container'>
-        <div className='row mt-100' style={{ marginBottom: '30px' }}>
-          <div className='col-9 home'>
-            {!loading ? (
-              posts.length > 0 ? (
-                posts.map((post) => (
-                  <div className='row post-style' key={post._id}>
-                    <div className='col-8'>
-                      <div className='post'>
-                        <div className='post__header'>
-                          <div className='post__header__avator'>
-                            {post.userName[0]}
-                          </div>
-                          <div className='post__header__user'>
-                            <span>{post.userName}</span>
-                            <span>
-                              {moment(post.updatedAt).format('MMM Do YY')}
-                            </span>
-                          </div>
-                        </div>
-                        <div className='post__body'>
-                          <h1 className='post__body__title'>
-                            <Link to={`/details/${post.slug}`}>
-                              {post.title}
-                            </Link>
-                          </h1>
-                          <div className='post__body__details'>
-                            {htmlToText(post.body.slice(0, 300))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-4'>
-                      <div className='post__image'>
-                        <img src={`/images/${post.image}`} alt={post.image} />
-                      </div>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                'No posts'
-              )
-            ) : (
-              <Loader />
-            )}
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col-9'>
-            <Pagination
-              path='home'
-              page={page}
-              perPage={perPage}
-              count={count}
-            />
-          </div>
-        </div>
-      </div>
-=======
->>>>>>> parent of b2fd42d... Show posts on home
     </>
   )
 }
