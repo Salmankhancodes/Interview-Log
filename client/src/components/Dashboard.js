@@ -16,7 +16,7 @@ import axios from 'axios'
 import { BsPencil, BsArchive, BsImage } from 'react-icons/bs'
 import Loader from './Loader'
 import Sidebar from './Sidebar'
-
+import moment from 'moment'
 import Pagination from './Pagination'
 const Dashboard = () => {
   const { redirect, message, loading } = useSelector(
