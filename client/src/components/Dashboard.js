@@ -94,6 +94,7 @@ const Dashboard = () => {
                   <div className='dashboard__posts' key={post._id}>
                     <div className='dashboard__posts__title'>
                       <Link to='/'>{post.title}</Link>
+                      <span>Published {moment(post.updatedAt).fromNow()}</span>
                     </div>
 
                     <div className='dashboard__posts__links'>
