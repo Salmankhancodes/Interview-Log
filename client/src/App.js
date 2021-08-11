@@ -11,10 +11,12 @@ import RouteLinks from './private/RouteLinks'
 import NotFound from './components/NotFound'
 import Create from './components/Create'
 import ChangePassword from './components/ChangePassword'
+
 import UpdateName from './components/UpdateName'
 import EditImage from './components/EditImage'
 import Edit from './components/Edit'
 import Store from './store'
+import Details from './components/Details'
 function App() {
   return (
     <Provider store={Store}>
@@ -22,6 +24,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
+          <Route path='/details/:id' exact component={Details} />
           <Route path='/home/:page' exact component={Home} />
           <RouteLinks path='/register' exact component={Register} />
           <RouteLinks path='/login' exact component={Login} />
