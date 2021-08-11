@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { BsChevronDoubleRight, BsChevronDoubleLeft } from 'react-icons/bs'
-const Pagination = ({ path, count, page, perPage }) => {
+const Pagination = ({ count, page, perPage }) => {
   let totalPages = Math.ceil(count / perPage)
   let startLoop = page
   let diff = totalPages - page
@@ -16,7 +16,7 @@ const Pagination = ({ path, count, page, perPage }) => {
     for (let i = startLoop; i <= endLoop; i++) {
       store.push(
         <li key={i} className={i == page ? 'active' : ''}>
-          <Link to={`/${path}/${i}`}>{i}</Link>
+          <Link to={`/dashboard/${i}`}>{i}</Link>
         </li>
       )
     }
@@ -26,7 +26,7 @@ const Pagination = ({ path, count, page, perPage }) => {
     if (page < totalPages) {
       return (
         <li>
-          <Link to={`/${path}/${parseInt(page) + 1}`}>
+          <Link to={`/dashboard/${parseInt(page) + 1}`}>
             <BsChevronDoubleRight />
           </Link>
         </li>
@@ -37,7 +37,7 @@ const Pagination = ({ path, count, page, perPage }) => {
     if (page > 1) {
       return (
         <li>
-          <Link to={`/${path}/${parseInt(page - 1)}`}>
+          <Link to={`/dashboard/${parseInt(page - 1)}`}>
             <BsChevronDoubleLeft />
           </Link>
         </li>

@@ -117,12 +117,7 @@ const Dashboard = () => {
             ) : (
               <Loader />
             )}
-            <Pagination
-              path='dashboard'
-              page={page}
-              perPage={perPage}
-              count={count}
-            />
+            <Pagination page={page} perPage={perPage} count={count} />
           </div>
         </div>
       </div>

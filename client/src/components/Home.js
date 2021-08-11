@@ -1,12 +1,8 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams, Link } from 'react-router-dom'
-import moment from 'moment'
-import { htmlToText } from 'html-to-text'
+import { useParams } from 'react-router-dom'
 import { homePosts } from '../store/asyncMethods/PostMethods'
-import Loader from './Loader'
-import Pagination from './Pagination'
 const Home = () => {
   let { page } = useParams()
   if (page === undefined) {
@@ -16,8 +12,17 @@ const Home = () => {
   const { posts, count, perPage } = useSelector((state) => state.FetchPosts)
   const dispatch = useDispatch()
   useEffect(() => {
+<<<<<<< HEAD
     dispatch(homePosts(page))
   }, [page])
+=======
+    dispatch(homePosts())
+  }, [])
+  console.log('page: ', page)
+  console.log('posts: ', posts)
+  console.log('count: ', count)
+  console.log('perPage: ', perPage)
+>>>>>>> parent of b2fd42d... Show posts on home
 
   return (
     <>
@@ -28,6 +33,7 @@ const Home = () => {
           content='Learn HTML, CSS, JavaScript, React, Vue, Flutter etc'
         />
       </Helmet>
+<<<<<<< HEAD
       <div className='container'>
         <div className='row mt-100' style={{ marginBottom: '30px' }}>
           <div className='col-9 home'>
@@ -86,6 +92,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+=======
+>>>>>>> parent of b2fd42d... Show posts on home
     </>
   )
 }
