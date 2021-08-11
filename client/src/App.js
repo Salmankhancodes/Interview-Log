@@ -10,7 +10,7 @@ import PrivateRoute from './private/PrivateRoute'
 import RouteLinks from './private/RouteLinks'
 import NotFound from './components/NotFound'
 import Create from './components/Create'
-
+import ChangePassword from './components/ChangePassword'
 import UpdateName from './components/UpdateName'
 import EditImage from './components/EditImage'
 import Edit from './components/Edit'
@@ -29,6 +29,11 @@ function App() {
           <PrivateRoute path='/updateImage/:id' exact component={EditImage} />
           <PrivateRoute path='/create' exact component={Create} />
           <PrivateRoute path='/updateName' exact component={UpdateName} />
+          <PrivateRoute
+            path='/updatePassword'
+            exact
+            component={ChangePassword}
+          />
           <Route component={NotFound} />
         </Switch>
       </Router>
