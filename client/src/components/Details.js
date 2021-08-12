@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import moment from 'moment'
 import { postDetails } from '../store/asyncMethods/PostMethods'
 import Loader from './Loader'
+import htmlToFormattedText from 'html-to-formatted-text'
 const Details = () => {
   const { id } = useParams()
   const { loading, details } = useSelector((state) => state.PostReducer)
@@ -28,7 +29,9 @@ const Details = () => {
               </div>
               <div className='post__body'>
                 <h1 className='post__body__title'>{details.title}</h1>
-                <div className='post__body__details'>{details.body}</div>
+                <div className='post__body__details'>
+                  {htmlToFormattedText(details.body)}
+                </div>
               </div>
             </div>
           ) : (
