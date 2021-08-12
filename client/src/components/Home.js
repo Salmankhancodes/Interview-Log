@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 import { homePosts } from '../store/asyncMethods/PostMethods'
 import Loader from './Loader'
+import htmlToFormattedText from 'html-to-formatted-text'
 import moment from 'moment'
-// import htmlToText from 'html-to-text'
+
 import Pagination from './Pagination'
 const Home = () => {
   let { page } = useParams()
@@ -18,10 +19,6 @@ const Home = () => {
   useEffect(() => {
     dispatch(homePosts(page))
   }, [page])
-  console.log('page: ', page)
-  console.log('posts: ', posts)
-  console.log('count: ', count)
-  console.log('perPage: ', perPage)
 
   return (
     <>
@@ -38,7 +35,7 @@ const Home = () => {
             {!loading ? (
               posts.length > 0 ? (
                 posts.map((post) => (
-                  <div className='row post-style'>
+                  <div className='row post-style' key={post._id}>
                     <div className='col-8'>
                       <div className='post'>
                         <div className='post__header'>
@@ -54,10 +51,12 @@ const Home = () => {
                         </div>
                         <div className='post__body'>
                           <h1 className='post__body__title'>
-                            <Link>{post.title}</Link>
+                            <Link to={`/details/${post._id}`}>
+                              {post.title}
+                            </Link>
                           </h1>
                           <div className='post__body__details'>
-                            {/* {htmlToText(post.body.slice(0, 300))} */}
+                            {htmlToFormattedText(post.body.slice(0, 300))}
                           </div>
                         </div>
                       </div>

@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@selderee/plugin-htmlparser2": "^0.6.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "concurrently": "^6.2.1",
@@ -21,10 +22,12 @@
     "express-validator": "^6.12.1",
     "formidable": "^1.2.2",
     "html-react-parser": "^1.2.7",
+    "html-to-formatted-text": "^2.7.0",
     "html-to-text": "^8.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.5",
     "nodemon": "^2.0.12",
+    "selderee": "^0.6.0",
     "uuid": "^8.3.2"
   }
 }
