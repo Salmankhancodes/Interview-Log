@@ -3,6 +3,7 @@ const { v4: uuidv4 } = require('uuid')
 const fs = require('fs')
 const { body, validationResult } = require('express-validator')
 const { htmlToText } = require('html-to-text')
+const CommentSchema = require('../models/Comment')
 const Post = require('../models/Post')
 module.exports.createPost = (req, res) => {
   const form = formidable({ multiples: true })
@@ -196,7 +197,24 @@ module.exports.postDetails = async (req, res) => {
   const id = req.params.id
   try {
     const post = await Post.findOne({ slug: id })
-    return res.status(200).json({ post })
+    const comments = await CommentSchema.find({ postId: post._id }).sort({
+      updatedAt: -1,
+    })
+    return res.status(200).json({ post, comments })
+  } catch (error) {
+    return res.status(500).json({ errors: error, msg: error.message })
+  }
+}
+module.exports.postComment = async (req, res) => {
+  const { id, comment, userName } = req.body
+  console.log(req.body)
+  try {
+    const response = await CommentSchema.create({
+      postId: id,
+      comment,
+      userName,
+    })
+    return res.status(200).json({ msg: 'Your comment has been published' })
   } catch (error) {
     return res.status(500).json({ errors: error, msg: error.message })
   }
