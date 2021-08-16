@@ -1,0 +1,48 @@
+.Banner {
+  margin-top: 5.8%;
+  display: flex;
+  background-color: yellow;
+  height: 300px;
+  &__left {
+    width: 60%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h2 {
+      color: rgb(70, 18, 61);
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 15px;
+      word-wrap: break-word;
+      padding-left: 90px;
+      padding-right: 90px;
+    }
+    span {
+      font-style: italic;
+      font-size: 13px;
+      margin-left: 35%;
+      padding-top: 10px;
+    }
+  }
+  &__right {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(70, 18, 61);
+    Button {
+      font-size: 16px;
+      width: 250px;
+      height: 50px;
+      cursor: pointer;
+      color: rgb(70, 18, 61);
+      background-color: #fff;
+      border-radius: 10px;
+    }
+  }
+}
