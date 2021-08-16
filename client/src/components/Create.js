@@ -13,7 +13,6 @@ const Create = (props) => {
   const {
     user: { _id, name },
   } = useSelector((state) => state.AuthReducer)
-
   const fileHandle = (e) => {
     if (e.target.files.length !== 0) {
       setCurrentImage(e.target.files[0].name)
@@ -113,6 +112,18 @@ const Create = (props) => {
                     placeholder='Post title...'
                   />
                 </div>
+                {/* <div className='group'>
+                  <label htmlFor='companyname'>Company Name</label>
+                  <input
+                    type='text'
+                    name='companyname'
+                    id='companyname'
+                    value={state.companyname}
+                    onChange={handleInput}
+                    className='group__control'
+                    placeholder='Post title...'
+                  />
+                </div> */}
                 <div className='group'>
                   <label htmlFor='image' className='image__label'>
                     {currentImage}
@@ -132,6 +143,7 @@ const Create = (props) => {
                     placeholder='Post body...'
                     value={value}
                     onChange={setValue}
+                    className='group__input'
                   />
                 </div>
                 <div className='group'>

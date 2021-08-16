@@ -16,11 +16,13 @@ import EditImage from './components/EditImage'
 import Edit from './components/Edit'
 import Store from './store'
 import Details from './components/Details'
+import Banner from './components/Banner'
 function App() {
   return (
     <Provider store={Store}>
       <Router>
         <Navbar />
+
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/details/:id' exact component={Details} />

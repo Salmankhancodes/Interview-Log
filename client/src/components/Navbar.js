@@ -37,7 +37,9 @@ const Navbar = () => {
         <div className='navbar__row'>
           <div className='navbar__left'>
             <Link to='/'>
-              <img src='/images/logo.png' alt='' />
+              <div className='navbar__logo'>
+                <span className="logo">IL</span>
+              </div>
             </Link>
           </div>
           {Links}

@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import toast, { Toaster } from 'react-hot-toast'
-
 import { Link, useParams } from 'react-router-dom'
 import {
   REDIRECT_FALSE,

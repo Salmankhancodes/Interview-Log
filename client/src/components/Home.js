@@ -6,6 +6,7 @@ import { homePosts } from '../store/asyncMethods/PostMethods'
 import Loader from './Loader'
 import htmlToFormattedText from 'html-to-formatted-text'
 import moment from 'moment'
+import Banner from './Banner'
 
 import Pagination from './Pagination'
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
 
   return (
     <>
+      <Banner />
       <Helmet>
         <title>Web articles</title>
         <meta

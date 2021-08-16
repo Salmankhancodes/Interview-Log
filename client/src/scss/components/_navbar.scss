@@ -13,9 +13,20 @@
     align-items: center;
     height: 8rem;
   }
-  &__left img {
-    width: 6rem;
+  &__left {
+    width: 5rem;
+    height: 4rem;
+    background-color: rgb(70, 18, 61);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  &__logo {
+    color: white;
+    font-size: 25px;
+  }
+
   &__right {
     display: flex;
     & li {

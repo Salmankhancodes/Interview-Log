@@ -44,11 +44,12 @@ const Details = () => {
               </div>
               <div className='post__body'>
                 <h1 className='post__body__title'>{details.title}</h1>
-                <div className='post__body__details'>
-                  {htmlToFormattedText(details.body)}
-                </div>
                 <div className='post__body__image'>
                   <img src={`/images/${details.image}`} alt={details.image} />
+                </div>
+                <div className='post__body__details'>
+                  <br />
+                  {htmlToFormattedText(details.body)}
                 </div>
               </div>
               {user ? (
