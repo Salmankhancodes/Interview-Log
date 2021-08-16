@@ -16,7 +16,7 @@ import EditImage from './components/EditImage'
 import Edit from './components/Edit'
 import Store from './store'
 import Details from './components/Details'
-import Banner from './components/Banner'
+
 function App() {
   return (
     <Provider store={Store}>
